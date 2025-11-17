@@ -30,7 +30,7 @@ where
     let procedures = procedures.borrow().clone();
 
     Router::<S>::new().route(
-        "/:id",
+        "/{id}",
         on(
             MethodFilter::GET.or(MethodFilter::POST),
             move |state: State<S>, req: axum::extract::Request<Body>| {
